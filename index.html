@@ -1,86 +1,752 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sicheng Qian — mathematics student at The Ohio State University.">
-  <title>Sicheng's Website</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sicheng Qian — Mathematics, Machine Learning &amp; Topology</title>
+<meta name="description" content="Sicheng Qian — mathematics undergraduate at The Ohio State University working at the intersection of theoretical machine learning and topology. Research, leadership, projects, and experience.">
+<meta name="author" content="Sicheng Qian">
+<meta name="theme-color" content="#07080a">
+<link rel="canonical" href="https://qsc032376-hash.github.io/">
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sicheng Qian — Mathematics, Machine Learning &amp; Topology">
+<meta property="og:description" content="Mathematics at The Ohio State University. Metric spaces, PAC learning, and the continuity of hypothesis distributions.">
+<meta property="og:image" content="https://qsc032376-hash.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sicheng Qian — Mathematics, Theoretical ML &amp; Topology">
+<meta property="og:url" content="https://qsc032376-hash.github.io/">
+<meta property="og:site_name" content="Sicheng Qian">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sicheng Qian — Mathematics, Machine Learning &amp; Topology">
+<meta name="twitter:description" content="Mathematics at The Ohio State University. Metric spaces, PAC learning, and the continuity of hypothesis distributions.">
+<meta name="twitter:image" content="https://qsc032376-hash.github.io/assets/img/og.png">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/fraunces-normal-300-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-tight-normal-300-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('sq-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sicheng Qian",
+  "email": "mailto:qian.917@osu.edu",
+  "jobTitle": "Mathematics undergraduate",
+  "description": "Mathematics undergraduate at The Ohio State University working at the intersection of theoretical machine learning and topology.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Columbus", "addressRegion": "OH", "addressCountry": "US" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "The Ohio State University" },
+  "knowsLanguage": ["Mandarin Chinese", "English", "German"],
+  "knowsAbout": ["Mathematics", "Topology", "PAC learning", "VC dimension", "Mathematical modeling", "Python"],
+  "sameAs": ["https://linkedin.com/in/sicheng-qian0703"]
+}
+</script>
 </head>
 <body>
-  <main id="top">
-    <h1><span class="globe" aria-hidden="true">🌎</span> Sicheng's Website</h1>
 
-    <div class="math-portrait" role="img" aria-label="Abstract mathematics illustration">
-      <span class="sigma">∑</span>
-      <span class="integral">∫</span>
-      <span class="partial">∂</span>
-      <p>Mathematics · Modeling · Simulation</p>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<!-- ============================ INTRO ============================ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__inner">
+    <svg class="intro__mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="13.5" stroke="currentColor" stroke-opacity=".22"/>
+      <circle cx="20" cy="20" r="6.5" stroke="#FF5C35" stroke-opacity=".9"/>
+      <circle cx="20" cy="20" r="2" fill="#FF5C35"/>
+      <circle cx="20" cy="6.5" r="1.5" fill="currentColor" fill-opacity=".5"/>
+    </svg>
+    <div class="intro__name">Sicheng Qian</div>
+    <div class="intro__bar"><i></i></div>
+    <div class="intro__meta"><span>Metric space</span><span id="intro-pct">00 — 100</span></div>
+  </div>
+</div>
+
+<!-- ============================== NAV ============================ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav__inner shell">
+    <a class="brand" href="#top" aria-label="Sicheng Qian — back to top">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-opacity=".3"/>
+        <circle cx="20" cy="20" r="6.2" stroke="var(--accent)" stroke-opacity=".95"/>
+        <circle cx="20" cy="20" r="1.8" fill="var(--accent)"/>
+        <circle cx="20" cy="7" r="1.4" fill="currentColor" fill-opacity=".5"/>
+        <circle cx="33" cy="20" r="1" fill="currentColor" fill-opacity=".3"/>
+      </svg>
+      <span class="brand__text">
+        Sicheng Qian
+        <small>Mathematics · OSU</small>
+      </span>
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="#profile"><i>01</i>Profile</a></li>
+      <li><a href="#research"><i>02</i>Research</a></li>
+      <li><a href="#leadership"><i>03</i>Leadership</a></li>
+      <li><a href="#experience"><i>04</i>Work</a></li>
+      <li><a href="#projects"><i>05</i>Projects</a></li>
+      <li><a href="#toolkit"><i>06</i>Toolkit</a></li>
+      <li><a href="#education"><i>07</i>Education</a></li>
+      <li><a href="#contact"><i>08</i>Contact</a></li>
+    </ul>
+
+    <div class="nav__tools">
+      <span class="clock" aria-label="Local time in Columbus, Ohio"><b id="clock">--:--</b><span id="clock-zone">EDT</span></span>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M20.2 14.6A8.4 8.4 0 1 1 9.4 3.8a6.7 6.7 0 0 0 10.8 10.8Z"/>
+        </svg>
+      </button>
+      <button class="palette-btn" type="button" data-palette aria-label="Open quick navigation" aria-haspopup="dialog">
+        <span>Quick nav</span><kbd>⌘K</kbd>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M4 8h16M4 16h16"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <ul class="menu__links">
+    <li><a href="#profile"><i>01</i>Profile</a></li>
+    <li><a href="#research"><i>02</i>Research</a></li>
+    <li><a href="#leadership"><i>03</i>Leadership</a></li>
+    <li><a href="#experience"><i>04</i>Experience</a></li>
+    <li><a href="#projects"><i>05</i>Projects</a></li>
+    <li><a href="#toolkit"><i>06</i>Toolkit</a></li>
+    <li><a href="#education"><i>07</i>Education</a></li>
+    <li><a href="#contact"><i>08</i>Contact</a></li>
+  </ul>
+  <div class="menu__foot">
+    <a href="mailto:qian.917@osu.edu">qian.917@osu.edu</a>
+    <a href="https://linkedin.com/in/sicheng-qian0703" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="resume.html">Résumé ↗</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- =========================== HERO =========================== -->
+  <header class="hero" id="top">
+    <div class="hero__grid shell">
+      <div class="hero__copy">
+        <div class="eyebrow" data-anim="1">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Columbus, Ohio · 39.9612° N, 82.9988° W</span>
+        </div>
+
+        <h1 class="hero__name">
+          <span class="line"><span class="line__inner">Sicheng</span></span>
+          <span class="line"><span class="line__inner"><em>Qian</em><span class="period">.</span></span></span>
+        </h1>
+
+        <p class="hero__role" data-anim="3">
+          Mathematics <span class="sep">/</span> Theoretical ML <span class="sep">/</span> Topology
+        </p>
+
+        <p class="hero__lede" data-anim="4">
+          First-year mathematics student at <strong>The Ohio State University</strong>, working where
+          topology meets learning theory — metric spaces, PAC learning, and the continuity of
+          distributions over hypotheses.
+        </p>
+
+        <div class="hero__actions" data-anim="5">
+          <a class="btn btn--primary" href="#research">
+            Explore the work
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="mailto:qian.917@osu.edu">Email me</a>
+          <a class="btn btn--ghost" href="resume.html">Résumé</a>
+        </div>
+      </div>
+
+      <aside class="hero__viz" data-anim="6" aria-label="Interactive illustration of a metric space">
+        <div class="viz" id="viz">
+          <div class="viz__chrome">
+            <span>Fig. 01 — Metric space</span>
+            <span class="viz__live"><i aria-hidden="true"></i>Live</span>
+          </div>
+          <canvas id="metric-canvas" aria-hidden="true"></canvas>
+          <div class="viz__readout">
+            <span>d(h, h′) ≤ ε</span>
+            <span>ε-ball B(h, ε)</span>
+          </div>
+        </div>
+        <p class="viz__caption">Points are hypotheses; edges appear where the metric closes. The rings are the ε-neighbourhood around a learner’s output.</p>
+      </aside>
     </div>
 
-    <nav aria-label="Site directory">
-      <a href="#cv">Curriculum vitae</a><br>
-      <a href="#courses">Freshman year courses</a><br>
-      <a href="#projects">Selected projects</a><br>
-      <a href="#research">Research experience</a><br>
-      <a href="https://bmmss-web.vercel.app" target="_blank" rel="noreferrer">Buckeyes Mathematical Modeling and Simulation Society</a><br>
-      <a href="#contact">Contact me</a>
+    <div class="hero__foot shell">
+      <a class="scroll-cue" href="#profile">
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+        Scroll to begin
+      </a>
+      <p class="hero__status"><b>Open to research &amp; collaboration</b><span aria-hidden="true">·</span>2026</p>
+    </div>
+  </header>
+
+  <!-- ========================== MARQUEE ========================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee-track">
+      <span class="marquee__item">Theoretical machine learning</span>
+      <span class="marquee__item">Topology</span>
+      <span class="marquee__item">Metric spaces</span>
+      <span class="marquee__item">PAC learning</span>
+      <span class="marquee__item">VC dimension</span>
+      <span class="marquee__item">Mathematical modeling</span>
+      <span class="marquee__item">MCM / ICM</span>
+      <span class="marquee__item">Python</span>
+      <span class="marquee__item">Qiskit</span>
+      <span class="marquee__item">HackOHI/O 2026</span>
+      <span class="marquee__item">The Ohio State University</span>
+      <span class="marquee__item">Columbus, Ohio</span>
+    </div>
+  </div>
+
+  <!-- ========================== PROFILE ========================= -->
+  <section class="section" id="profile" data-num="01" aria-labelledby="profile-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">01</span>
+          <span class="sec-kicker">Profile</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="profile-title" data-reveal style="--d:60ms">Proof, then<br><em>practice.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">A mathematics undergraduate who likes hard questions, clean arguments, and the moment a model finally explains something.</p>
+      </div>
+
+      <div class="profile">
+        <div data-reveal>
+          <p class="statement">
+            I’m Sicheng Qian, a first-year mathematics student at The Ohio State University.
+            My interests sit where topology meets learning theory — <em>metric spaces</em>,
+            PAC learning, VC dimension, and what it means for a distribution over hypotheses
+            to depend <strong>continuously</strong> on the data behind it.
+          </p>
+          <div class="profile__more">
+            <p>
+              At the Math Cycle Program I work through the theory with a Ph.D. mentor, and I have
+              developed a proof of uniform continuity for a learning-algorithm-induced distribution
+              map in the setting we study. It’s the kind of problem where a single counterexample
+              can undo a week of work — which is exactly why I like it.
+            </p>
+            <p>
+              Alongside the proofs, I founded a society for mathematical modeling and simulation,
+              tutor calculus and statistics, and build software with Python and React — most recently
+              a campus task planner at HackOHI/O, now growing quantum-optimization extensions with
+              IBM Qiskit.
+            </p>
+          </div>
+        </div>
+
+        <dl class="facts" data-reveal style="--d:120ms">
+          <div>
+            <dt>Based in</dt>
+            <dd>Columbus, Ohio</dd>
+          </div>
+          <div>
+            <dt>Studying</dt>
+            <dd>B.S. Mathematics <span>— The Ohio State University</span></dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>Aug 2026 — Dec 2029 <span>(expected)</span></dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Theoretical machine learning · Topology</dd>
+          </div>
+          <div>
+            <dt>Leading</dt>
+            <dd>Buckeyes Mathematical Modeling &amp; Simulation Society</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>Mandarin · English · German</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== RESEARCH ======================== -->
+  <section class="section" id="research" data-num="02" aria-labelledby="research-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">02</span>
+          <span class="sec-kicker">Research</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="research-title" data-reveal style="--d:60ms">The geometry<br>of <em>learning.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">A proof is a claim that survives every counterexample. Mine is about continuity — and about what a learner’s output really is.</p>
+      </div>
+
+      <div class="research">
+        <article class="card research__main" data-reveal data-spotlight>
+          <div class="research__top">
+            <div class="chip-row">
+              <span class="chip chip--accent">Math Cycle Program</span>
+              <span class="chip">Theory</span>
+              <span class="chip">Topology</span>
+            </div>
+            <div class="research__meta">
+              <span><b>Sept 2026</b> — Present</span>
+              <span>Columbus, OH</span>
+            </div>
+          </div>
+
+          <h3 class="research__title">Theoretical machine learning <span class="amp">&amp;</span> topology</h3>
+
+          <p class="research__mentor">
+            <span class="mono">Mentor</span>
+            <b>Steven Raanes</b> · Ph.D. student
+          </p>
+
+          <div class="question">
+            <span>Question 01</span>
+            <p>Is the map a learner induces — from data to a distribution over hypotheses — uniformly continuous in the setting studied?</p>
+          </div>
+
+          <ul class="ticks research__bullets">
+            <li>Study <strong>metric spaces</strong>, <strong>PAC learning</strong>, and <strong>VC dimension</strong>, focusing on probability distributions over hypotheses.</li>
+            <li>Developed a <strong>proof of uniform continuity</strong> for a learning-algorithm-induced distribution map in the setting studied.</li>
+          </ul>
+        </article>
+
+        <aside class="research__side">
+          <figure class="figure" data-reveal style="--d:100ms">
+            <svg viewBox="0 0 360 300" role="img" aria-label="Diagram: nested epsilon-balls in a metric space of hypotheses, with a central output h and connected points">
+              <defs>
+                <pattern id="figgrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                  <path d="M36 0H0v36" fill="none" stroke="currentColor" stroke-opacity=".055"/>
+                </pattern>
+              </defs>
+              <rect width="360" height="300" fill="url(#figgrid)"/>
+
+              <line class="fig-axis" x1="180" y1="16" x2="180" y2="284"/>
+              <line class="fig-axis" x1="16" y1="152" x2="344" y2="152"/>
+
+              <circle class="fig-ring fig-ring--3" cx="180" cy="152" r="118"/>
+              <circle class="fig-ring fig-ring--2" cx="180" cy="152" r="84"/>
+              <circle class="fig-ring fig-ring--1" cx="180" cy="152" r="50"/>
+
+              <g class="fig-edge">
+                <line x1="180" y1="152" x2="148" y2="116"/>
+                <line x1="180" y1="152" x2="214" y2="128"/>
+                <line x1="180" y1="152" x2="212" y2="200"/>
+                <line x1="180" y1="152" x2="150" y2="206"/>
+                <line x1="148" y1="116" x2="112" y2="92"/>
+                <line x1="214" y1="128" x2="252" y2="106"/>
+                <line x1="212" y1="200" x2="258" y2="184"/>
+                <line x1="150" y1="206" x2="116" y2="196"/>
+                <line x1="252" y1="106" x2="292" y2="126"/>
+                <line x1="112" y1="92" x2="84" y2="128"/>
+              </g>
+              <g class="fig-edge fig-edge--focal">
+                <line x1="180" y1="152" x2="148" y2="116"/>
+                <line x1="180" y1="152" x2="214" y2="128"/>
+                <line x1="180" y1="152" x2="212" y2="200"/>
+                <line x1="180" y1="152" x2="150" y2="206"/>
+              </g>
+
+              <g class="fig-node">
+                <circle cx="112" cy="92" r="2.4"/>
+                <circle cx="252" cy="106" r="2.4"/>
+                <circle cx="292" cy="126" r="2"/>
+                <circle cx="84" cy="128" r="2"/>
+                <circle cx="258" cy="184" r="2.4"/>
+                <circle cx="116" cy="196" r="2.2"/>
+                <circle cx="72" cy="222" r="1.8"/>
+                <circle cx="304" cy="226" r="1.8"/>
+              </g>
+              <g class="fig-node fig-node--accent">
+                <circle cx="148" cy="116" r="2.8"/>
+                <circle cx="214" cy="128" r="2.8"/>
+                <circle cx="212" cy="200" r="2.8"/>
+                <circle cx="150" cy="206" r="2.2"/>
+              </g>
+
+              <circle class="fig-halo" cx="180" cy="152" r="8"/>
+              <circle class="fig-focal" cx="180" cy="152" r="4"/>
+
+              <text class="fig-label fig-label--accent" x="206" y="146">h</text>
+              <text class="fig-label" x="233" y="157">ε</text>
+              <text class="fig-label" x="24" y="286">METRIC d</text>
+              <text class="fig-label" x="266" y="286">VC-dim</text>
+            </svg>
+            <figcaption><b>Fig. 02</b><span>Nested ε-balls around a learner’s output h; edges drawn where the metric closes between hypotheses.</span></figcaption>
+          </figure>
+
+          <dl class="spec" data-reveal style="--d:160ms">
+            <div><dt>Program</dt><dd>Math Cycle Program</dd></div>
+            <div><dt>Term</dt><dd>September 2026 — Present</dd></div>
+            <div><dt>Mentor</dt><dd>Steven Raanes, Ph.D. student</dd></div>
+            <div><dt>Topic</dt><dd>Theoretical machine learning and topology</dd></div>
+            <div><dt>Methods</dt><dd>Metric spaces · PAC learning · VC dimension</dd></div>
+            <div><dt>Output</dt><dd>Proof of uniform continuity for the induced distribution map</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= LEADERSHIP ======================= -->
+  <section class="section" id="leadership" data-num="03" aria-labelledby="leadership-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">03</span>
+          <span class="sec-kicker">Leadership</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="leadership-title" data-reveal style="--d:60ms">Building<br>the <em>room.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">Mathematical modeling is a team sport played against a deadline. I started a society so more students could play it.</p>
+      </div>
+
+      <div class="leader">
+        <div class="leader__body" data-reveal>
+          <span class="leader__org">The Ohio State University</span>
+          <h3 class="leader__title">Buckeyes Mathematical Modeling &amp; Simulation Society</h3>
+          <p class="leader__role">
+            <span><b>Founder &amp; President</b></span>
+            <span>August 2026 — Present</span>
+            <span>Columbus, OH</span>
+          </p>
+          <ul class="ticks">
+            <li>Founded and lead a student society for <strong>mathematical modeling, simulation, and interdisciplinary applications</strong>.</li>
+            <li>Coordinate members’ preparation for the <strong>Mathematical Contest in Modeling (MCM)</strong> and <strong>Interdisciplinary Contest in Modeling (ICM)</strong>.</li>
+          </ul>
+          <a class="inline-link" href="https://bmmss-web.vercel.app" target="_blank" rel="noopener noreferrer">Visit the society website <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="leader__stats" data-reveal style="--d:100ms">
+          <div class="stat">
+            <div class="stat__num" data-count="1" data-pad="2">01</div>
+            <div class="stat__label">Society founded</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">2026</div>
+            <div class="stat__label">Year founded</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="2" data-pad="2">02</div>
+            <div class="stat__label">Modeling contests</div>
+          </div>
+          <div class="stat stat--wide">
+            <p>Members train for the Mathematical Contest in Modeling and the Interdisciplinary Contest in Modeling — applied problems, open-ended data, one weekend.</p>
+            <span class="chip chip--accent">MCM · ICM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EXPERIENCE ======================= -->
+  <section class="section" id="experience" data-num="04" aria-labelledby="experience-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">04</span>
+          <span class="sec-kicker">Experience</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="experience-title" data-reveal style="--d:60ms">Work, in<br><em>practice.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">Tutoring that rewards reasoning over memorization — and a kitchen that taught me pace, precision, and clean hands.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="tl" data-reveal>
+          <div class="tl__when">
+            <span class="yr">2025</span>
+            <span class="mo">Oct — Present</span>
+            <span class="now">Current</span>
+          </div>
+          <div class="tl__body">
+            <h3>Mathematics &amp; Statistics Tutor</h3>
+            <p class="tl__org">Independent · Online <span class="place">Remote</span></p>
+            <ul class="ticks">
+              <li>Tutored <strong>SAT Math</strong> and <strong>AP Calculus BC</strong> (Oct 2025 — May 2026), emphasizing reasoning and problem-solving.</li>
+              <li>Provide instruction in <strong>introductory statistics</strong>, explaining concepts and guiding students through problems.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="tl" data-reveal style="--d:80ms">
+          <div class="tl__when">
+            <span class="yr">2023</span>
+            <span class="mo">Nov 2023 — Jun 2024</span>
+          </div>
+          <div class="tl__body">
+            <h3>Kitchen &amp; Front Counter Team Member</h3>
+            <p class="tl__org">Farinacci Pizza <span class="place">Brecksville, OH</span></p>
+            <ul class="ticks">
+              <li>Prepared pizzas, assisted front-counter customers, washed dishes, and maintained clean kitchen work areas.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========================== PROJECTS ======================== -->
+  <section class="section" id="projects" data-num="05" aria-labelledby="projects-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">05</span>
+          <span class="sec-kicker">Projects</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="projects-title" data-reveal style="--d:60ms">CampusPilot,<br><em>and after.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">A hackathon prototype that refused to stop at the demo — scheduling first, quantum optimization next.</p>
+      </div>
+
+      <article class="project" id="project-card" data-reveal data-tilt>
+        <div class="project__grid">
+          <div>
+            <div class="project__eyebrow">
+              <span class="chip chip--accent">HackOHI/O 2026</span>
+              <span class="chip">Ongoing</span>
+              <span class="chip">Columbus, OH</span>
+            </div>
+            <h3 class="project__title">Campus<em>Pilot</em></h3>
+            <p class="project__sub">Campus task planning · built in a weekend, still in development</p>
+            <p class="project__lede">
+              A planner for student life — courses, meetings, and study blocks in one schedule.
+              Built with three teammates at Ohio State's flagship hackathon, then extended after judging.
+            </p>
+
+            <ul class="ticks">
+              <li>Developed a campus task-planning application with three teammates using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Python</strong>.</li>
+              <li>Tested scheduling algorithms and verified application functionality through <strong>automated test cases</strong>.</li>
+              <li>Post-hackathon: developing <strong>quantum optimization</strong> extensions using <strong>IBM Qiskit</strong>; room-booking functionality remains in development.</li>
+            </ul>
+
+            <div class="project__specs">
+              <div class="spec-row"><span>Event</span><b>HackOHI/O 2026</b></div>
+              <div class="spec-row"><span>Team</span><b>Four people</b></div>
+              <div class="spec-row"><span>Stack</span><b>React · TypeScript · Python · Qiskit</b></div>
+              <div class="spec-row"><span>Status</span><b>Ongoing — room booking in development</b></div>
+            </div>
+          </div>
+
+          <div class="mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>campus-pilot / week-07</span></div>
+            <div class="mock__head">
+              <strong>This week</strong>
+              <em>4 tasks</em>
+            </div>
+            <div class="mock__days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+            <div class="mock__grid">
+              <span class="mock__block mock__block--mint" style="grid-column:1;grid-row:1 / 3"><span>Lecture</span></span>
+              <span class="mock__block" style="grid-column:2;grid-row:2 / 5"><span>MCM prep</span></span>
+              <span class="mock__block mock__block--quiet" style="grid-column:3;grid-row:1 / 3"><span>Calc BC</span></span>
+              <span class="mock__block mock__block--mint" style="grid-column:3;grid-row:5 / 7"><span>Topology</span></span>
+              <span class="mock__block mock__block--quiet" style="grid-column:4;grid-row:3 / 5"><span>Review</span></span>
+              <span class="mock__block" style="grid-column:5;grid-row:2 / 6"><span>CampusPilot</span></span>
+              <span class="mock__block" style="grid-column:5;grid-row:6 / 8"><span>Qiskit</span></span>
+              <span class="mock__block mock__block--quiet" style="grid-column:1;grid-row:5 / 7"><span>Study</span></span>
+              <span class="mock__block mock__block--mint" style="grid-column:2;grid-row:6 / 8"><span>Stats</span></span>
+            </div>
+            <div class="mock__foot">
+              <span>scheduling · v0.4</span>
+              <span class="dots"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================== TOOLKIT ========================= -->
+  <section class="section" id="toolkit" data-num="06" aria-labelledby="toolkit-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">06</span>
+          <span class="sec-kicker">Toolkit</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="toolkit-title" data-reveal style="--d:60ms">Tools of<br>the <em>trade.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">A primary language, the stack that shipped CampusPilot, three branches of mathematics, three spoken languages.</p>
+      </div>
+
+      <div class="toolkit">
+        <div class="tk" data-reveal>
+          <div class="tk__head"><h3>Programming</h3><span>01</span></div>
+          <ul class="tk__list">
+            <li><b>Python</b><span>Primary</span></li>
+            <li><b>TypeScript</b><span>CampusPilot</span></li>
+            <li><b>React</b><span>CampusPilot</span></li>
+            <li><b>IBM Qiskit</b><span>In progress</span></li>
+          </ul>
+          <p class="tk__note">The stack behind coursework, research scripts, and CampusPilot — with quantum extensions now in progress.</p>
+        </div>
+
+        <div class="tk" data-reveal style="--d:80ms">
+          <div class="tk__head"><h3>Mathematics</h3><span>02</span></div>
+          <ul class="tk__list">
+            <li><b>Mathematical Analysis</b></li>
+            <li><b>Mathematical Modeling</b></li>
+            <li><b>Statistics</b></li>
+          </ul>
+          <p class="tk__note">Coursework, contest preparation, and the analysis behind the continuity proof.</p>
+        </div>
+
+        <div class="tk" data-reveal style="--d:160ms">
+          <div class="tk__head"><h3>Languages</h3><span>03</span></div>
+          <ul class="tk__list">
+            <li><b>Mandarin Chinese</b><span>Native</span></li>
+            <li><b>English</b><span>Fluent</span></li>
+            <li><b>German</b><span>Beginner</span></li>
+          </ul>
+          <p class="tk__note">Explaining a proof clearly is a language skill; so is ordering dinner in three countries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EDUCATION ======================== -->
+  <section class="section" id="education" data-num="07" aria-labelledby="education-title">
+    <div class="shell">
+      <div class="sec-head">
+        <div class="sec-meta" data-reveal>
+          <span class="sec-index">07</span>
+          <span class="sec-kicker">Education</span>
+          <span class="sec-rule" aria-hidden="true"></span>
+        </div>
+        <h2 class="sec-title" id="education-title" data-reveal style="--d:60ms">Foundations,<br><em>formally.</em></h2>
+        <p class="sec-lede" data-reveal style="--d:120ms">Mathematics at Ohio State, beginning autumn 2026 — after four years of honors work outside Cleveland.</p>
+      </div>
+
+      <div class="edu">
+        <div class="edu__row" data-reveal>
+          <span class="edu__date">Aug 2026 — Dec 2029<em>Expected</em></span>
+          <h3 class="edu__school">The Ohio State University <em>Current</em></h3>
+          <p class="edu__degree">Bachelor of Science in Mathematics</p>
+          <span class="edu__loc">Columbus, OH</span>
+        </div>
+        <div class="edu__row" data-reveal style="--d:80ms">
+          <span class="edu__date">Sep 2022 — May 2026</span>
+          <h3 class="edu__school">Brecksville Broadview Heights High School</h3>
+          <p class="edu__degree">Honors Diploma</p>
+          <span class="edu__loc">Broadview Heights, OH</span>
+        </div>
+      </div>
+
+      <p class="edu__note" data-reveal style="--d:140ms">
+        <span aria-hidden="true">↳</span>
+        Fall 2026 · currently maintaining course notes for
+        <a href="math-4181h/">MATH 4181H <span aria-hidden="true">↗</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================== CONTACT ======================== -->
+  <section class="section contact" id="contact" data-num="08" aria-labelledby="contact-title">
+    <div class="shell">
+      <div class="contact__head">
+        <div>
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>08 — Contact</span>
+          <h2 class="contact__title" id="contact-title">Let’s <em>talk.</em></h2>
+        </div>
+        <p class="sec-lede" style="max-width:30ch">Research questions, modeling contests, tutoring, or a hackathon team — the inbox is open.</p>
+      </div>
+
+      <a class="contact__mail" href="mailto:qian.917@osu.edu">
+        qian.917@osu.edu
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="contact__grid" style="margin-top:2rem">
+        <dl class="cg">
+          <dt>LinkedIn</dt>
+          <dd><a href="https://linkedin.com/in/sicheng-qian0703" target="_blank" rel="noopener noreferrer">sicheng-qian0703 <span class="arrow">↗</span></a></dd>
+        </dl>
+        <dl class="cg">
+          <dt>Location</dt>
+          <dd>Columbus, Ohio</dd>
+        </dl>
+        <dl class="cg">
+          <dt>Local time</dt>
+          <dd id="clock-long">--:-- EST</dd>
+        </dl>
+        <dl class="cg">
+          <dt>Résumé</dt>
+          <dd><a href="resume.html">Web version <span class="arrow">↗</span></a></dd>
+        </dl>
+      </div>
+
+      <div class="contact__actions">
+        <button class="btn btn--primary" type="button" id="copy-email">Copy email</button>
+        <a class="btn btn--ghost" href="assets/Sicheng_Qian_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+        <a class="btn btn--ghost" href="resume.html">View résumé</a>
+        <span class="copy-note" id="copy-note" role="status">Copied to clipboard</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner shell">
+    <div class="footer__brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-opacity=".3"/>
+        <circle cx="20" cy="20" r="6.2" stroke="var(--accent)" stroke-opacity=".95"/>
+        <circle cx="20" cy="20" r="1.8" fill="var(--accent)"/>
+      </svg>
+      Sicheng Qian
+    </div>
+    <p class="footer__note">Designed &amp; built by hand · <span id="year">2026</span></p>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="mailto:qian.917@osu.edu">Email</a>
+      <a href="https://linkedin.com/in/sicheng-qian0703" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="resume.html">Résumé</a>
     </nav>
+    <a class="to-top" href="#top">Back to top
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M8 3L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
 
-    <section id="cv">
-      <h2>Curriculum vitae</h2>
-      <p><strong>Sicheng Qian</strong></p>
-      <h3>Education</h3>
-      <p><strong>The Ohio State University</strong><br>2026–Present — BS in Mathematics</p>
-      <h3>Activities</h3>
-      <ul>
-        <li>President, <a href="https://bmmss-web.vercel.app" target="_blank" rel="noreferrer">BMMSS</a> (Buckeyes Mathematical Modeling and Simulation Society)</li>
-        <li>General Member, SIAM2I</li>
-      </ul>
-      <p class="back"><a href="#top">Back to homepage</a></p>
-    </section>
+<!-- command palette -->
+<dialog class="palette" id="palette" aria-label="Quick navigation">
+  <input class="palette__input" id="palette-input" type="text" placeholder="Jump to…  (profile, research, projects)" autocomplete="off" spellcheck="false">
+  <ul class="palette__list" id="palette-list" role="listbox" aria-label="Destinations"></ul>
+  <div class="palette__foot">
+    <span><kbd>↑</kbd><kbd>↓</kbd>Navigate</span>
+    <span><kbd>↵</kbd>Go</span>
+    <span><kbd>Esc</kbd>Close</span>
+  </div>
+</dialog>
 
-    <section id="courses">
-      <h2>Freshman year courses</h2>
-      <h3>Fall</h3>
-      <ul>
-        <li><a href="math-4181h/">MATH 4181H</a> — course notes</li>
-        <li>CSE 1224</li>
-        <li>PSYCH 1375</li>
-        <li>GERMAN 1101.01</li>
-      </ul>
-      <h3>Spring</h3>
-      <p><em>Course selection is currently vacant.</em></p>
-      <p class="back"><a href="#top">Back to homepage</a></p>
-    </section>
-
-    <section id="projects">
-      <h2>Selected projects</h2>
-      <ul>
-        <li><a href="https://sicheng-qian-portfolio.qian-917.chatgpt.site/bmmss-parking-spot-challenge.pdf" target="_blank" rel="noreferrer">BMMSS Challenge of the Day: The Parking Spot Problem (PDF)</a></li>
-      </ul>
-      <p class="back"><a href="#top">Back to homepage</a></p>
-    </section>
-
-    <section id="research">
-      <h2>Research experience</h2>
-      <p><em>This page is currently vacant.</em></p>
-      <p class="back"><a href="#top">Back to homepage</a></p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact me</h2>
-      <address>
-        Cell phone: <a href="tel:+14406875658">+1 (440) 687-5658</a><br>
-        University email: <a href="mailto:qian.917@osu.edu">qian.917@osu.edu</a><br>
-        Personal email: <a href="mailto:qsc032376@gmail.com">qsc032376@gmail.com</a><br>
-        LinkedIn: <a href="https://www.linkedin.com/in/sicheng-qian0703" target="_blank" rel="noreferrer">www.linkedin.com/in/sicheng-qian0703</a><br>
-        Address: Room 336-1, 97 W Lane Ave, Columbus, OH 43210
-      </address>
-      <p class="back"><a href="#top">Back to homepage</a></p>
-    </section>
-
-    <footer>Last updated August 2026.</footer>
-  </main>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résumé — Sicheng Qian</title>
+<meta name="description" content="Résumé of Sicheng Qian — mathematics undergraduate at The Ohio State University.">
+<meta name="theme-color" content="#f3efe7">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/fraunces-normal-300-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<style>
+  :root {
+    --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+    --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --paper: #f7f3eb;
+    --ink: #15130f;
+    --muted: #6d655a;
+    --rule: rgba(21, 19, 15, 0.16);
+    --accent: #b23319;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: clamp(16px, 4vw, 56px) clamp(12px, 3vw, 40px);
+    background:
+      radial-gradient(70% 50% at 50% 0%, #efe9de, transparent 70%),
+      #e6e0d5;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .bar {
+    max-width: 880px;
+    margin: 0 auto 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .bar__back {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .bar__back:hover { color: var(--ink); }
+
+  .bar__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .pbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    height: 34px;
+    padding: 0 0.9rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s, transform 0.3s;
+  }
+
+  .pbtn:hover { background: #fff; border-color: rgba(21, 19, 15, 0.3); transform: translateY(-1px); }
+
+  .pbtn--dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .pbtn--dark:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: clamp(26px, 5vw, 60px) clamp(22px, 5vw, 64px) clamp(30px, 5vw, 56px);
+    box-shadow: 0 40px 80px -40px rgba(40, 32, 20, 0.45), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+    border-radius: 2px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px 32px;
+    align-items: end;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-weight: 330;
+    font-size: clamp(2.6rem, 6.2vw, 4rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    margin: 0;
+  }
+
+  .name em { font-style: italic; }
+  .name .dot { color: var(--accent); }
+
+  .tagline {
+    margin: 8px 0 0;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .contact a:hover { color: var(--accent); }
+  .contact strong { color: var(--ink); font-weight: 500; }
+
+  /* ---------- sections ---------- */
+  .sec { margin-top: 26px; }
+
+  .sec__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 12px;
+  }
+
+  .sec__head h2 {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .sec__head span {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .sec__head::after {
+    content: "";
+    margin-left: auto;
+    width: 26px;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .entry { margin-bottom: 14px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .entry__title {
+    font-family: var(--serif);
+    font-weight: 420;
+    font-size: 1.06rem;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .entry__date {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .entry__sub {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin: 1px 0 5px;
+  }
+
+  .entry__sub b { font-weight: 500; color: var(--ink); }
+
+  .entry__sub .place {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .entry ul {
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .entry li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 0.87rem;
+    line-height: 1.6;
+    color: #3c372f;
+    margin-bottom: 3px;
+  }
+
+  .entry li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.62em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.75;
+  }
+
+  .entry li b { font-weight: 500; color: var(--ink); }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr);
+    gap: 6px 18px;
+    font-size: 0.87rem;
+  }
+
+  .skills dt {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+
+  .skills dd { margin: 0; color: #3c372f; }
+  .skills dd b { font-weight: 500; color: var(--ink); }
+
+  .edu__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 28px;
+  }
+
+  .muted { color: var(--muted); }
+  .mono { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.08em; }
+
+  .page-foot {
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .page-foot a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .masthead { grid-template-columns: minmax(0, 1fr); }
+    .contact { text-align: left; white-space: normal; flex-direction: row; flex-wrap: wrap; gap: 2px 14px; }
+    .skills { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .skills dt { padding-top: 8px; }
+    .edu__grid { grid-template-columns: minmax(0, 1fr); }
+    .entry__top { flex-direction: column; gap: 1px; }
+    .entry__date { text-align: left; }
+  }
+
+  @page { margin: 0.45in 0.55in; }
+
+  @media print {
+    body { background: #fff; padding: 0; font-size: 9.9pt; line-height: 1.46; }
+    .bar, .no-print { display: none !important; }
+    .page {
+      max-width: none;
+      box-shadow: none;
+      padding: 0;
+      background: #fff;
+      border-radius: 0;
+    }
+    .name { font-size: 28pt; }
+    .tagline { font-size: 7.4pt; margin-top: 5pt; }
+    .masthead { border-bottom: 1pt solid #000; padding-bottom: 9pt; gap: 10pt 24pt; }
+    .contact { font-size: 7.8pt; line-height: 1.55; gap: 1pt; }
+    .sec { margin-top: 14pt; }
+    .sec__head { padding-bottom: 4.5pt; margin-bottom: 8pt; }
+    .sec__head h2 { font-size: 7.6pt; }
+    .sec__head span { font-size: 6.8pt; }
+    .entry { margin-bottom: 11pt; }
+    .entry__title { font-size: 10.9pt; }
+    .entry__date { font-size: 7.2pt; }
+    .entry__sub { font-size: 8.4pt; margin: 0 0 3pt; }
+    .entry ul { margin-top: 2pt; }
+    .entry li { font-size: 9pt; line-height: 1.46; margin-bottom: 1.6pt; color: #222; }
+    .skills { font-size: 9pt; gap: 3pt 14pt; }
+    .skills dt { font-size: 6.8pt; padding-top: 3pt; }
+    .edu__grid { gap: 8pt 22pt; }
+    .page-foot { display: none; }
+    a { color: #000; }
+    .sec, .entry { break-inside: avoid; }
+    p, ul { orphans: 2; widows: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar no-print">
+  <a class="bar__back" href="index.html">← Back to site</a>
+  <div class="bar__actions">
+    <a class="pbtn" href="assets/Sicheng_Qian_CV.pdf" download>Download PDF ↓</a>
+    <button class="pbtn pbtn--dark" type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</div>
+
+<main class="page">
+  <header class="masthead">
+    <div>
+      <h1 class="name">Sicheng <em>Qian</em><span class="dot">.</span></h1>
+      <p class="tagline">Mathematics · Theoretical Machine Learning · Topology</p>
+    </div>
+    <address class="contact">
+      <span><strong>qian.917@osu.edu</strong></span>
+      <span>440-687-5658</span>
+      <span>Columbus, OH</span>
+      <a href="https://linkedin.com/in/sicheng-qian0703" target="_blank" rel="noopener noreferrer">linkedin.com/in/sicheng-qian0703</a>
+    </address>
+  </header>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Education</h2><span>01</span></div>
+    <div class="edu__grid">
+      <div class="entry">
+        <div class="entry__top">
+          <h3 class="entry__title">The Ohio State University</h3>
+          <span class="entry__date">Aug 2026 — Dec 2029<br>(Expected)</span>
+        </div>
+        <p class="entry__sub">Bachelor of Science in Mathematics <span class="place">Columbus, OH</span></p>
+      </div>
+      <div class="entry">
+        <div class="entry__top">
+          <h3 class="entry__title">Brecksville Broadview Heights<br>High School</h3>
+          <span class="entry__date">Sep 2022 — May 2026</span>
+        </div>
+        <p class="entry__sub">Honors Diploma <span class="place">Broadview Heights, OH</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Technical Skills</h2><span>02</span></div>
+    <dl class="skills">
+      <dt>Programming</dt>
+      <dd><b>Python</b></dd>
+      <dt>Mathematics</dt>
+      <dd>Mathematical Analysis · Mathematical Modeling · Statistics</dd>
+      <dt>Languages</dt>
+      <dd>Mandarin Chinese (Native) · English (Fluent) · German (Beginner)</dd>
+    </dl>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Research Experience</h2><span>03</span></div>
+    <div class="entry">
+      <div class="entry__top">
+        <h3 class="entry__title">Math Cycle Program</h3>
+        <span class="entry__date">September 2026 — Present</span>
+      </div>
+      <p class="entry__sub">Topic: Theoretical Machine Learning and Topology · Mentor: <b>Steven Raanes</b> (Ph.D. Student)</p>
+      <ul>
+        <li>Study metric spaces, PAC learning, and VC dimension, focusing on probability distributions over hypotheses.</li>
+        <li>Developed a proof of uniform continuity for a learning-algorithm-induced distribution map in the setting studied.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Leadership</h2><span>04</span></div>
+    <div class="entry">
+      <div class="entry__top">
+        <h3 class="entry__title">Buckeyes Mathematical Modeling and Simulation Society</h3>
+        <span class="entry__date">August 2026 — Present</span>
+      </div>
+      <p class="entry__sub"><b>Founder and President</b> · The Ohio State University <span class="place">Columbus, OH</span></p>
+      <ul>
+        <li>Founded and lead a student society for mathematical modeling, simulation, and interdisciplinary applications.</li>
+        <li>Coordinate members' preparation for the Mathematical Contest in Modeling (MCM) and Interdisciplinary Contest in Modeling (ICM).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Work Experience</h2><span>05</span></div>
+    <div class="entry">
+      <div class="entry__top">
+        <h3 class="entry__title">Mathematics and Statistics Tutor</h3>
+        <span class="entry__date">October 2025 — Present</span>
+      </div>
+      <p class="entry__sub">Independent <span class="place">Online</span></p>
+      <ul>
+        <li>Tutored SAT Math and AP Calculus BC (Oct 2025 — May 2026), emphasizing reasoning and problem-solving.</li>
+        <li>Provide instruction in introductory statistics, explaining concepts and guiding students through problems.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry__top">
+        <h3 class="entry__title">Kitchen and Front Counter Team Member</h3>
+        <span class="entry__date">November 2023 — June 2024</span>
+      </div>
+      <p class="entry__sub">Farinacci Pizza <span class="place">Brecksville, OH</span></p>
+      <ul>
+        <li>Prepared pizzas, assisted front-counter customers, washed dishes, and maintained clean kitchen work areas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2>Projects</h2><span>06</span></div>
+    <div class="entry">
+      <div class="entry__top">
+        <h3 class="entry__title">CampusPilot — HackOHI/O 2026</h3>
+        <span class="entry__date">October 2026 — Present</span>
+      </div>
+      <p class="entry__sub">Hackathon Prototype and Ongoing Development <span class="place">Columbus, OH</span></p>
+      <ul>
+        <li>Developed a campus task-planning application with three teammates using React, TypeScript, and Python.</li>
+        <li>Tested scheduling algorithms and verified application functionality through automated test cases.</li>
+        <li>Post-hackathon: developing quantum optimization extensions using IBM Qiskit; room-booking functionality remains in development.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <span>Sicheng Qian — Résumé</span>
+    <span><a href="index.html">qsc032376-hash.github.io</a> · Updated 2026</span>
+  </footer>
+</main>
+
+</body>
+</html>
