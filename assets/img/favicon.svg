@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sicheng Qian">
-  <rect width="64" height="64" rx="14" fill="#07080a"/>
-  <circle cx="32" cy="32" r="20" fill="none" stroke="#f4f1ea" stroke-opacity=".22" stroke-width="1.5"/>
-  <circle cx="32" cy="32" r="10.5" fill="none" stroke="#ff5c35" stroke-width="2"/>
-  <circle cx="32" cy="32" r="3.4" fill="#ff5c35"/>
-  <circle cx="32" cy="10" r="2.4" fill="#f4f1ea" fill-opacity=".6"/>
-  <circle cx="54" cy="32" r="1.7" fill="#f4f1ea" fill-opacity=".35"/>
-</svg>

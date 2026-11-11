@@ -23,7 +23,8 @@
 <meta name="twitter:description" content="Mathematics at The Ohio State University. Metric spaces, PAC learning, and the continuity of hypothesis distributions.">
 <meta name="twitter:image" content="https://qsc032376-hash.github.io/assets/img/og.png">
 
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/img/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" href="assets/fonts/fraunces-normal-300-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -65,15 +66,22 @@
 <!-- ============================ INTRO ============================ -->
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__inner">
-    <svg class="intro__mark" viewBox="0 0 40 40" fill="none">
-      <circle cx="20" cy="20" r="13.5" stroke="currentColor" stroke-opacity=".22"/>
-      <circle cx="20" cy="20" r="6.5" stroke="#FF5C35" stroke-opacity=".9"/>
-      <circle cx="20" cy="20" r="2" fill="#FF5C35"/>
-      <circle cx="20" cy="6.5" r="1.5" fill="currentColor" fill-opacity=".5"/>
-    </svg>
-    <div class="intro__name">Sicheng Qian</div>
-    <div class="intro__bar"><i></i></div>
-    <div class="intro__meta"><span>Metric space</span><span id="intro-pct">00 — 100</span></div>
+    <div class="intro__badge">
+      <svg class="intro__ring" viewBox="0 0 132 132" aria-hidden="true">
+        <circle class="intro__ring-track" cx="66" cy="66" r="62"></circle>
+        <circle class="intro__ring-fill" id="intro-ring" cx="66" cy="66" r="62"></circle>
+      </svg>
+      <svg class="intro__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect class="mark-seal" width="40" height="40" rx="9"/>
+        <text class="mark-type" x="20" y="27.6" text-anchor="middle">SQ</text>
+      </svg>
+    </div>
+    <div class="intro__name">Sicheng <em>Qian</em></div>
+    <div class="intro__bar"><i id="intro-bar"></i></div>
+    <div class="intro__meta"><span>Loading metric space</span><span><b id="intro-pct">000</b> / 100</span></div>
+  </div>
+  <div class="intro__foot">
+    <span>Mathematics</span><span>Theoretical ML</span><span>Topology</span>
   </div>
 </div>
 
@@ -81,12 +89,9 @@
 <nav class="nav" id="nav" aria-label="Primary">
   <div class="nav__inner shell">
     <a class="brand" href="#top" aria-label="Sicheng Qian — back to top">
-      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-opacity=".3"/>
-        <circle cx="20" cy="20" r="6.2" stroke="var(--accent)" stroke-opacity=".95"/>
-        <circle cx="20" cy="20" r="1.8" fill="var(--accent)"/>
-        <circle cx="20" cy="7" r="1.4" fill="currentColor" fill-opacity=".5"/>
-        <circle cx="33" cy="20" r="1" fill="currentColor" fill-opacity=".3"/>
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect class="mark-seal" width="40" height="40" rx="9"/>
+        <text class="mark-type" x="20" y="27.6" text-anchor="middle">SQ</text>
       </svg>
       <span class="brand__text">
         Sicheng Qian
@@ -341,67 +346,44 @@
         </article>
 
         <aside class="research__side">
-          <figure class="figure" data-reveal style="--d:100ms">
-            <svg viewBox="0 0 360 300" role="img" aria-label="Diagram: nested epsilon-balls in a metric space of hypotheses, with a central output h and connected points">
-              <defs>
-                <pattern id="figgrid" width="36" height="36" patternUnits="userSpaceOnUse">
-                  <path d="M36 0H0v36" fill="none" stroke="currentColor" stroke-opacity=".055"/>
-                </pattern>
-              </defs>
-              <rect width="360" height="300" fill="url(#figgrid)"/>
+          <figure class="figure figure--lab" data-reveal style="--d:100ms">
+            <div class="lab">
+              <svg id="lab-svg" viewBox="0 0 360 300" role="img" aria-labelledby="lab-title lab-desc">
+                <title id="lab-title">Interactive epsilon-ball in a metric space of hypotheses</title>
+                <desc id="lab-desc">Drag the point h and move the epsilon slider to see which hypotheses fall inside its neighbourhood.</desc>
+                <defs>
+                  <pattern id="figgrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                    <path d="M36 0H0v36" fill="none" stroke="currentColor" stroke-opacity=".055"/>
+                  </pattern>
+                </defs>
+                <rect width="360" height="300" fill="url(#figgrid)"/>
+                <line class="fig-axis" x1="180" y1="14" x2="180" y2="286"/>
+                <line class="fig-axis" x1="14" y1="150" x2="346" y2="150"/>
+                <circle id="lab-ball" class="lab-ball" cx="180" cy="150" r="72"/>
+                <circle id="lab-halo" class="lab-halo" cx="180" cy="150" r="26"/>
+                <g id="lab-edges" class="lab-edges"></g>
+                <g id="lab-points" class="lab-points"></g>
+                <circle id="lab-h-ring" class="lab-h-ring" cx="180" cy="150" r="13"/>
+                <circle id="lab-handle" class="lab-handle" cx="180" cy="150" r="28"/>
+                <circle id="lab-h" class="lab-h" cx="180" cy="150" r="4.5"/>
+                <text class="fig-label fig-label--accent" id="lab-h-label" x="192" y="144">h</text>
+                <text class="fig-label" id="lab-eps-label" x="184" y="72">ε</text>
+              </svg>
 
-              <line class="fig-axis" x1="180" y1="16" x2="180" y2="284"/>
-              <line class="fig-axis" x1="16" y1="152" x2="344" y2="152"/>
-
-              <circle class="fig-ring fig-ring--3" cx="180" cy="152" r="118"/>
-              <circle class="fig-ring fig-ring--2" cx="180" cy="152" r="84"/>
-              <circle class="fig-ring fig-ring--1" cx="180" cy="152" r="50"/>
-
-              <g class="fig-edge">
-                <line x1="180" y1="152" x2="148" y2="116"/>
-                <line x1="180" y1="152" x2="214" y2="128"/>
-                <line x1="180" y1="152" x2="212" y2="200"/>
-                <line x1="180" y1="152" x2="150" y2="206"/>
-                <line x1="148" y1="116" x2="112" y2="92"/>
-                <line x1="214" y1="128" x2="252" y2="106"/>
-                <line x1="212" y1="200" x2="258" y2="184"/>
-                <line x1="150" y1="206" x2="116" y2="196"/>
-                <line x1="252" y1="106" x2="292" y2="126"/>
-                <line x1="112" y1="92" x2="84" y2="128"/>
-              </g>
-              <g class="fig-edge fig-edge--focal">
-                <line x1="180" y1="152" x2="148" y2="116"/>
-                <line x1="180" y1="152" x2="214" y2="128"/>
-                <line x1="180" y1="152" x2="212" y2="200"/>
-                <line x1="180" y1="152" x2="150" y2="206"/>
-              </g>
-
-              <g class="fig-node">
-                <circle cx="112" cy="92" r="2.4"/>
-                <circle cx="252" cy="106" r="2.4"/>
-                <circle cx="292" cy="126" r="2"/>
-                <circle cx="84" cy="128" r="2"/>
-                <circle cx="258" cy="184" r="2.4"/>
-                <circle cx="116" cy="196" r="2.2"/>
-                <circle cx="72" cy="222" r="1.8"/>
-                <circle cx="304" cy="226" r="1.8"/>
-              </g>
-              <g class="fig-node fig-node--accent">
-                <circle cx="148" cy="116" r="2.8"/>
-                <circle cx="214" cy="128" r="2.8"/>
-                <circle cx="212" cy="200" r="2.8"/>
-                <circle cx="150" cy="206" r="2.2"/>
-              </g>
-
-              <circle class="fig-halo" cx="180" cy="152" r="8"/>
-              <circle class="fig-focal" cx="180" cy="152" r="4"/>
-
-              <text class="fig-label fig-label--accent" x="206" y="146">h</text>
-              <text class="fig-label" x="233" y="157">ε</text>
-              <text class="fig-label" x="24" y="286">METRIC d</text>
-              <text class="fig-label" x="266" y="286">VC-dim</text>
-            </svg>
-            <figcaption><b>Fig. 02</b><span>Nested ε-balls around a learner’s output h; edges drawn where the metric closes between hypotheses.</span></figcaption>
+              <div class="lab__ui">
+                <div class="lab__readout">
+                  <span class="lab__count"><b id="lab-count">6</b><span>of 12 inside B(h, ε)</span></span>
+                  <span class="lab__eps">ε <b id="lab-eps">0.24</b></span>
+                </div>
+                <input class="lab__slider" id="lab-slider" type="range" min="8" max="55" step="1" value="24" aria-label="Epsilon radius">
+                <div class="lab__actions">
+                  <button class="lab__btn" id="lab-pulse" type="button">Pulse ε</button>
+                  <button class="lab__btn" id="lab-reset" type="button">Reset</button>
+                  <span class="lab__hint" aria-hidden="true">↳ drag h</span>
+                </div>
+              </div>
+            </div>
+            <figcaption><b>Fig. 02</b><span>Drag the learner’s output h and widen ε: the points inside the ball are the hypotheses the metric cannot tell apart.</span></figcaption>
           </figure>
 
           <dl class="spec" data-reveal style="--d:160ms">
@@ -717,10 +699,9 @@
 <footer class="footer">
   <div class="footer__inner shell">
     <div class="footer__brand">
-      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="13" stroke="currentColor" stroke-opacity=".3"/>
-        <circle cx="20" cy="20" r="6.2" stroke="var(--accent)" stroke-opacity=".95"/>
-        <circle cx="20" cy="20" r="1.8" fill="var(--accent)"/>
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect class="mark-seal" width="40" height="40" rx="9"/>
+        <text class="mark-type" x="20" y="27.6" text-anchor="middle">SQ</text>
       </svg>
       Sicheng Qian
     </div>

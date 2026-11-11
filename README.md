@@ -13,10 +13,18 @@ Static HTML, CSS and vanilla JavaScript. No build step, no framework, no runtime
 
 - **Editorial design system** — Fraunces (variable serif), Inter Tight, JetBrains Mono, all
   self-hosted with `font-display: swap`. Obsidian + ember palette, paper-light alternative.
+- **SQ seal** — an artistic monogram: cream seal, ink serif letters, inverted in light mode.
+  Used in the nav, footer, loader, favicon and social card.
+- **Loading animation** — a circular progress ring draws around the seal, the percentage counts,
+  then the whole screen lifts like a curtain to reveal the hero.
 - **Live “metric space” hero** — a seeded canvas of hypotheses, distance edges, and a pulsing
   ε-neighbourhood. Pointer-reactive, DPR-aware, pauses off-screen, static under reduced motion.
-- **Motion with restraint** — masked name reveal, intro counter, scroll-triggered reveals with
-  stagger, spotlight cards, subtle 3D tilt, magnetic-feeling buttons.
+- **High-contrast ribbon** — the scrolling keyword band is a solid paper/ink strip, switching
+  polarity with the theme.
+- **Interactive ε-ball lab** — in Research: drag `h`, move the ε slider, pulse the radius and
+  watch hypotheses enter and leave the neighbourhood. Touch-friendly; the page still scrolls.
+- **Apple-style scroll** — blur-and-rise reveals, a word-by-word gradient on the profile
+  statement, parallax ghost numerals and hero depth.
 - **Command palette** — `⌘K` / `Ctrl K` (or `/`) opens quick navigation, actions, and links.
   Full keyboard support.
 - **Theme switch** — dark ⇄ light, persisted in `localStorage`, respects first paint (no flash).
@@ -43,7 +51,7 @@ Static HTML, CSS and vanilla JavaScript. No build step, no framework, no runtime
 │   │   └── style.css           # design system + layout + motion + print
 │   ├── js/main.js              # theme, palette, canvas, reveals, counters, tilt…
 │   ├── fonts/                  # Fraunces, Inter Tight, JetBrains Mono (latin, woff2)
-│   ├── img/                    # favicon.svg, apple-touch-icon.png, og.png
+│   ├── img/                    # favicon-32.png, icon-192/512, apple-touch-icon, og.png
 │   └── Sicheng_Qian_CV.pdf     # downloadable CV
 ├── .nojekyll                   # keep GitHub Pages from running Jekyll
 └── README.md
