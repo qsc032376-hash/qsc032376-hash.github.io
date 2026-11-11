@@ -3,6 +3,8 @@
 A hand-built, luxury-editorial portfolio for **Sicheng Qian** — mathematics undergraduate at
 The Ohio State University, working at the intersection of theoretical machine learning and topology.
 
+**Live:** https://qsc032376-hash.github.io
+
 Static HTML, CSS and vanilla JavaScript. No build step, no framework, no runtime dependencies.
 
 ---
@@ -33,6 +35,8 @@ Static HTML, CSS and vanilla JavaScript. No build step, no framework, no runtime
 ├── index.html                  # the site
 ├── resume.html                 # print / web résumé (one page when printed)
 ├── 404.html                    # on-brand not-found page
+├── math-4181h/                 # course-notes page (preserved from the previous site)
+├── styles.css                  # stylesheet used by the course-notes page
 ├── assets/
 │   ├── css/
 │   │   ├── fonts.css           # @font-face declarations
